@@ -13,3 +13,5 @@ Steps followed & logged:
 11. sudo apt install gunicorn
 12. pip install python-dotenv
 13. gunicorn -w 4 --reload -b :8000 "app.main:create_app(testing=False)"
+or
+13. flask run --host 0.0.0.0 --port 80
