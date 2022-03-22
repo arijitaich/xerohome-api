@@ -8,7 +8,7 @@ def create_app(testing: bool = True):
     def index():
         return f"Connected: {testing}"
 
-    @app.get("/")
+    @app.route("/status")
     def status():
         return jsonify({"status": "Connected"})
 
