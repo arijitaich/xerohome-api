@@ -19,7 +19,7 @@ def create_app(test_config=None):
 
     @app.route("/")
     def index():
-        return "Connected: {test_config}"
+        return "<h1>XEROHOME API 2.0</h1>"
 
     @app.route("/status")
     def status():
