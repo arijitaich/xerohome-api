@@ -11,7 +11,6 @@ def create_app(test_config=None):
     if test_config is None:
         app.config.from_mapping(
             SECRET_KEY = "dev"
-
         )
 
     else:
@@ -20,7 +19,7 @@ def create_app(test_config=None):
 
     @app.route("/")
     def index():
-        return "Connected: {testing}"
+        return "Connected: {test_config}"
 
     @app.route("/status")
     def status():
