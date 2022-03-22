@@ -6,7 +6,7 @@ def create_app(testing: bool = True):
 
     @app.route("/")
     def index():
-        return "<h1>XEROHOME API 2.0</h1><br><b>Status: </b>Connected.<br><b>Production: {testing}"
+        return "Connected: {testing}"
 
     @app.route("/status")
     def status():
