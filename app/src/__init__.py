@@ -2,6 +2,9 @@
 
 # from curses import flash
 from flask import Flask, jsonify
+import os
+from src.auth import auth
+from src.target import target
 
 def create_app(test_config=None):
     
@@ -10,19 +13,15 @@ def create_app(test_config=None):
 
     if test_config is None:
         app.config.from_mapping(
-            SECRET_KEY = "dev"
+            SECRET_KEY = os.environ.get("SECRET_KEY"),
         )
 
     else:
         app.config.from_mapping(test_config)
 
-
-    @app.route("/")
-    def index():
-        return "<h1>XEROHOME API 2.0</h1>"
-
-    @app.route("/status")
-    def status():
-        return jsonify({"status": "Connected"})
+    app.register_blueprint(auth)
+    app.register_blueprint(target)
+    
+    
 
     return app
