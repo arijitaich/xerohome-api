@@ -6,7 +6,7 @@ def create_app(testing: bool = True):
 
     @app.route("/")
     def index():
-        return jsonify("Connected: {testing}")
+        return jsonify({"Connected: {testing}"})
 
     @app.route("/status")
     def status():
