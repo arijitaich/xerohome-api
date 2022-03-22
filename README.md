@@ -11,4 +11,5 @@ Steps followed & logged:
 9. export FLASK_APP="app.main:create_app"
 10. export FLASK_ENV=development
 11. sudo apt install gunicorn
-12. gunicorn -w 4 --reload -b :8000 "app.main:create_app(testing=False)"
+12. pip install python-dotenv
+13. gunicorn -w 4 --reload -b :8000 "app.main:create_app(testing=False)"
